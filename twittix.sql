@@ -90,6 +90,12 @@ CREATE TABLE "report_types" (
   "name" varchar
 );
 
+CREATE TABLE "post_view_status" (
+  "user" integer NOT NULL,
+  "post" integer NOT NULL,
+  "readt_at" timestamp NOT NULL
+);
+
 COMMENT ON COLUMN "users"."picture" IS 'url';
 
 COMMENT ON COLUMN "posts"."content" IS 'Content of the post';
@@ -133,3 +139,7 @@ ALTER TABLE "reports" ADD FOREIGN KEY ("type") REFERENCES "report_types" ("id");
 ALTER TABLE "mentions" ADD FOREIGN KEY ("mentioning_post_id") REFERENCES "posts" ("id");
 
 ALTER TABLE "mentions" ADD FOREIGN KEY ("mentioned_user_id") REFERENCES "users" ("id");
+
+ALTER TABLE "post_view_status" ADD FOREIGN KEY ("user") REFERENCES "users" ("id");
+
+ALTER TABLE "post_view_status" ADD FOREIGN KEY ("post") REFERENCES "posts" ("id");
