@@ -18,6 +18,7 @@ CREATE TABLE "users" (
   "role" varchar NOT NULL,
   "username" varchar UNIQUE NOT NULL,
   "description" longtext,
+  "birthdate" DATE NOT NULL,
   "picture" varchar,
   "is_private" bool DEFAULT false,
   "is_active" bool DEFAULT true,
