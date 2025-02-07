@@ -1,7 +1,7 @@
 CREATE TABLE "follows" (
   "following_user_id" integer NOT NULL,
   "followed_user_id" integer NOT NULL,
-  "is_accepted" bool DEFAULT false,
+  "accepted" bool DEFAULT false,
   "created_at" timestamp NOT NULL
 );
 
@@ -20,9 +20,9 @@ CREATE TABLE "users" (
   "description" longtext,
   "birthdate" DATE NOT NULL,
   "picture" varchar,
-  "is_private" bool DEFAULT false,
-  "is_active" bool DEFAULT true,
-  "is_ban" bool DEFAULT false,
+  "private" bool DEFAULT false,
+  "active" bool DEFAULT true,
+  "banned" bool DEFAULT false,
   "deleted_at" timestamp,
   "created_at" timestamp NOT NULL
 );
